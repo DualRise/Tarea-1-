@@ -12,6 +12,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Iniciar Sesión</h1>
+        <form method="Post" action="menu.jsp">
+            <p>Usuario: <input type="text" name="usuario"></p>
+            <p>Contraseña: <input type="password" name="contraseña"></p>
+            <input type="submit" value="Menu Admin">
+        </form>
     </body>
 </html>

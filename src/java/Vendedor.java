@@ -46,7 +46,6 @@ public class Vendedor extends Usuario {
             Logger.getLogger(Vendedor.class.getName()).log(Level.SEVERE, null, ex);
         }
         return PRD;
-
     }
 
     public ResultSet ver_venta_Cliente(int id_cliente) {

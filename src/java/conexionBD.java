@@ -24,7 +24,7 @@ public class conexionBD {
             Class.forName("oracle.jdbc.driver.OracleDriver");
         } catch (ClassNotFoundException ex) {
             System.out.println("Se cae por Driver");
-            Logger.getLogger(conexionBD.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(conexionBD.class.getName()).log(Level.SEVERE, null, ex);            
         }
         try {
             Connection BD = DriverManager.getConnection("jdbc:oracle:thin:@200.86.127.226:1521:XE", "sharsha", "1234567");
