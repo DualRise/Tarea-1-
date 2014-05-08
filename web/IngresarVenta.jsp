@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Ingresar Nueva Venta:</h1>
-        <form method="GET" action="menu.jsp">
+        <form method="Post" action="menu.jsp">
             <p>Cliente: <input type="text" name="cliente"></p>
             <p>Producto: <input type="text" name="producto"></p>
             <p>Cantidad: <input type="int" name="stock"></p>

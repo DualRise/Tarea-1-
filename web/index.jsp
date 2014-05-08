@@ -14,8 +14,8 @@
     <body>
         <h1>Iniciar Sesión</h1>
         <form method="Post" action="menu.jsp">
-            <p>Usuario: <input type="text" name="usuario"></p>
-            <p>Contraseña: <input type="password" name="contraseña"></p>
+            <p>Usuario: <input type="text" name="login"></p>
+            <p>Contraseña: <input type="password" name="password"></p>
             <input type="submit" value="Menu Admin">
         </form>
     </body>
