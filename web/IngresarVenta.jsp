@@ -1,7 +1,7 @@
 <%-- 
     Document   : IngresarVenta
-    Created on : 06-05-2014, 02:14:13 PM
-    Author     : DualRise
+    Created on : 02-05-2014, 05:46:15 PM
+    Author     : SebastiánAriel
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,11 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Menu Nueva Venta</title>
+        <title>JSP Page</title>
     </head>
     <body>
-        <h1>Ingresar Nueva Venta:</h1>
-        <form method="Post" action="menu.jsp">
+        <h1>IngresarVenta:</h1>
+        <form method="post" action="menu.jsp">
             <p>Cliente: <input type="text" name="cliente"></p>
             <p>Producto: <input type="text" name="producto"></p>
             <p>Cantidad: <input type="int" name="stock"></p>

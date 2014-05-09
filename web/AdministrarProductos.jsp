@@ -18,6 +18,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <form method="post" action="ModificarProducto.jsp" name="productForm">
         <%Connection cn = null;
    
         String driver = "oracle.jdbc.OracleDriver";
@@ -32,21 +33,23 @@
         <select name="tabla">
         <%
            try{
-               String nombre,id_producto,cantidad; 
+               String nombre,id_producto,cantidad,descripcion,categoria,precio; 
                Class.forName(driver);
                cn = DriverManager.getConnection(url, login, password);
 
                Statement st = cn.createStatement();
                ResultSet rs = st.executeQuery("SELECT * FROM TAREABD.PRODUCTO");
                try{   
-                   out.println("Lista de productos");
                    while (rs.next())
                    {
                        nombre = rs.getString("NOMBRE");
                        id_producto = rs.getString("ID_PRODUCTO");
                        cantidad = rs.getString("STOCK");
-                       out.println("<option value="+nombre+">" + "Nombre producto: "+ nombre + " Código producto: " + id_producto+ " Stock: "+cantidad+"</option>");
+                       descripcion = rs.getString("DESCRIPCION");
+                       categoria = rs.getString("CATEGORIA");
+                       precio = rs.getString("PRECIO");
                        
+                       out.println("<option value="+nombre+"-"+id_producto+"-"+cantidad+"-"+descripcion+"-"+categoria+"-"+precio+">" + "Nombre producto: "+ nombre + " Código producto: " + id_producto+ " Stock: "+cantidad+"</option>");
                    }
                    
                    
@@ -72,16 +75,13 @@
            
         %>
         </select>
-        <p>
-            
-            
-        </p>
+        <input type="submit" value="Modificar producto">
+        </form>
         <form action="AgregarProducto.jsp">
             <input type="submit" value="Agregar producto">
         </form>
-        <form action="ModificarProducto.jsp">
-            <input type="submit" value="Modificar producto">
+        <form action="menu.jsp">
+            <input type="submit" value="Cancelar">
         </form>
     </body>
 </html>
-

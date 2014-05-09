@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ValidarCliente
-    Created on : 06-05-2014, 02:05:50 PM
+    Document   : ValidarIngresarProducto
+    Created on : 07-05-2014, 04:56:11 PM
     Author     : SebastiánAriel
 --%>
 
@@ -16,20 +16,28 @@
     String login = "system";
     String password = "Dorothtyt01";
    
-    String nombre, rut;
+    String id_producto, nombre, descripcion, categoria, stock, precio;
    
+    id_producto = request.getParameter("id_producto");
     nombre = request.getParameter("nombre");
-    rut = request.getParameter("rut");
+    descripcion = request.getParameter("descripcion");
+    categoria = request.getParameter("categoria");
+    stock = request.getParameter("stock");
+    precio = request.getParameter("precio");
     try{
             Class.forName(driver);
             cn = DriverManager.getConnection(url, login, password);     
-            PreparedStatement  st = cn.prepareStatement("INSERT INTO TAREABD.CLIENTE (RUT, NOMBRE) VALUES (?, ?)");
+            PreparedStatement  st = cn.prepareStatement("INSERT INTO TAREABD.PRODUCTO (ID_PRODUCTO, STOCK, DESCRIPCION, CATEGORIA, PRECIO, NOMBRE) VALUES (?, ?, ?, ?, ?, ?)");
 
-            st.setString(1,rut);
-            st.setString(2,nombre);
+            st.setString(1,id_producto);
+            st.setString(2,stock);
+            st.setString(3,descripcion);
+            st.setString(4,categoria);
+            st.setString(5,precio);
+            st.setString(6,nombre);
 
             st.executeUpdate();
-            out.println("<script>alert('Cliente ingresado con éxito.')</script>");
+            out.println("<script>alert('Producto ingresado con éxito.')</script>");
             out.println("<meta http-equiv='refresh' content='0;url=menu.jsp'>");
     }
     catch (Exception e) {

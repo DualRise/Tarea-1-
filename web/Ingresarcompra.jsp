@@ -1,6 +1,6 @@
 <%-- 
-    Document   : IngresarClienteUser
-    Created on : 07-05-2014, 03:57:14 PM
+    Document   : IngresarCompra
+    Created on : 02-05-2014, 05:45:59 PM
     Author     : SebastiánAriel
 --%>
 
@@ -12,15 +12,15 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Ingresar Cliente:</h1>
-        <form method="post" action="ValidarCliente.jsp">
-            <p>Nombre: <input type="text" name="nombre"></p>
-            <p>Rut: <input type="text" name="rut"></p>
+        <h1>Ingresar Compra:</h1>
+        <form method="post" action="ValidarIngresarCompra.jsp">
+            <p>Código producto: <input type="int" name="id_producto"></p>
+            <p>Cantidad: <input type="int" name="stock"></p>
+            <p>Precio: <input type="int" name="precio"></p>
             <input type="submit" value="Finalizar">
         </form>
-        <form action="MenuUser.jsp">
+        <form method="post" action="menu.jsp">
             <input type="submit" value="Cancelar">
         </form>
-        
     </body>
 </html>
